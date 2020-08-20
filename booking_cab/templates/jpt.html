@@ -1,0 +1,21 @@
+{% for data in cab %}
+        <div class="col-lg-4">
+            <h1>{{data.description}}</h1>
+            {% load static %}
+            <img width="100" src="/{{data.image}}"/>
+            {% if request.session.customer_id %}
+            <p>booking cab id: {{data.cab_id}}</p>
+            <form method="POST" action="/book/create">
+                {% csrf_token %}
+                <input readonly type="text" name="cab" value="{{data.cab_id}}"/>
+                <input readonly type="text" name="customer" value="{{request.session.customer_id}}"/>
+                <p><input type="time" name="time"/></p>
+                <p><input type="date" name="date"/></p>
+                <button type="submit" class="btn btn-outline-primary">book</button>
+            </form>
+
+            {% else %}
+            <p class="text-info">please register</p>
+            {% endif %}
+        </div>
+        {% endfor %}

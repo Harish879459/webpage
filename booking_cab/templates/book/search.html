@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<a href="/user" class="btn btn-primary">Back to index page</a>
+<table class="table table-primary">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+    </tr>
+
+    <tr>
+        <td>{{user.user_id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <th>
+            <a href="update/{{user.user_id}}" class="btn btn-primary">edit</a>
+            |
+            <a href="delete/{{user.user_id}}" class="btn btn-success">delete</a>
+        </th>
+    </tr>
+</table>
+        <!--to active selected tab in sidebar-->
+<script type="text/javascript">
+    $(function () {
+        $('.sidebar').find('.active').removeClass('active');
+        $('#user').addClass('active');
+    });
+</script>
+{% endblock %}

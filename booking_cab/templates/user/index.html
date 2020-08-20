@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<a href="create" class="btn btn-primary">Create User</a>
+<form method="post" action="search">
+    {% csrf_token %}
+<input type="text"  name="search"/>
+</form>
+<table class="table table-primary">
+    <tr>
+        <th>ID</th>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+    </tr>
+    {% for data in users %}
+    <tr>
+        <td>{{data.user_id}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.email}}</td>
+        <td>{{data.password}}</td>
+        <th>
+            <a href="update/{{data.user_id}}" class="btn btn-primary">edit</a>
+            |
+            <a href="delete/{{data.user_id}}" class="btn btn-success">delete</a>
+        </th>
+    </tr>
+    {% endfor %}
+</table>
+<form method="POST" action="">
+    {% csrf_token %}
+    {% if page > 1 %}
+<button name="prev">prev</button>
+    {% endif %}
+    <input style="width: 50px" value="{{page}}" name="page" />
+
+    {% if pageItem == 4 %}
+<button name="next">next</button>
+    {% endif %}
+</form>
+<!--to active selected tab in sidebar-->
+<script type="text/javascript">
+    $(function () {
+        $('.sidebar').find('.active').removeClass('active');
+        $('#user').addClass('active');
+    });
+</script>
+{% endblock %}

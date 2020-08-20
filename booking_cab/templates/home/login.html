@@ -1,0 +1,20 @@
+{% extends 'home/home-layout.html' %}
+{% block home-content %}
+<div class="col-lg-2 offset-lg-4 mt-5">
+    <form method="POST" action="login">
+        {% csrf_token %}
+        <label>email</label>
+        <input type="text" name="email"/>
+
+        <label>password</label>
+        <input type="password" name="password"/>
+
+
+        <input type="submit" value="submit"/>
+    </form>
+
+    {% for message in messages %}
+    <p>{{message}}</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'home/home-layout.html' %}
+{% block home-content %}
+<div class="col-lg-2 offset-lg-4 mt-5">
+    <form method="POST" action="register">
+        {% csrf_token %}
+        <label>name</label>
+        {{form.name}}
+
+        <label>address</label>
+        {{form.address}}
+
+        <label>contact</label>
+        {{form.contact}}
+
+        <input type="submit" value="submit"/>
+    </form>
+</div>
+{% endblock %}

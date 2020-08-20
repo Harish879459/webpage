@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block content %}
+<a href="create" class="btn btn-primary">Create Cab</a>
+<form method="post" action="search">
+    {% csrf_token %}
+    <input type="text" name="search"/>
+</form>
+<table class="table table-primary">
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Image</th>
+    </tr>
+    {% for data in cab %}
+    <tr>
+        <td>{{data.cab_id}}</td>
+        <td>{{data.description}}</td>
+        {% load static %}
+        <td>
+<!--            <video width="320" height="240" controls>-->
+<!--             <source src="/{{data.cab.image}}" type="video/mp4">-->
+<!--            Your browser does not support the video tag.-->
+<!--            </video>-->
+            <img width="100" src="{{data.image}}"/>
+        </td>
+        <th>
+            <a href="update/{{data.cab_id}}" class="btn btn-primary">edit</a>
+            |
+            <a href="delete/{{data.cab_id}}" class="btn btn-success">delete</a>
+        </th>
+    </tr>
+    {% endfor %}
+</table>
+<form method="POST" action="">
+    {% csrf_token %}
+    {% if page > 1 %}
+    <button name="prev">prev</button>
+    {% endif %}
+    <input style="width: 50px" value="{{page}}" name="page"/>
+
+    {% if pageItem == 4 %}
+    <button name="next">next</button>
+    {% endif %}
+</form
+        <!--to active selected tab in sidebar-->
+<script type="text/javascript">
+    $(function () {
+        $('.sidebar').find('.active').removeClass('active');
+        $('#cab').addClass('active');
+    });
+</script>
+{% endblock %}

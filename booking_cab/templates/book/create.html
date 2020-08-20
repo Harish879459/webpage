@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+<form method="POST" action="create" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>Customer</label>
+    {{form.customer}}
+
+    <label>cab</label>
+    {{form.cab}}
+
+    <label>date</label>
+    <input type="date" name="date"/>
+
+    <label>time</label>
+    <input type="time" name="time"/>
+
+
+    <input type="submit" value="submit"/>
+</form>
+<!--to active selected tab in sidebar-->
+<script type="text/javascript">
+    $(function () {
+        $('.sidebar').find('.active').removeClass('active');
+        $('#book').addClass('active');
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends 'home/home-layout.html' %}
+{% block home-content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-12">
+            <a href="register" class="btn btn-primary">Register Customer</a>
+            <a href="/login" class="btn btn-primary">Login Admin</a>
+        </div>
+    <div class="header" id="topheader">
+        <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="logo"><img src="{% static 'images/logoimag.jpg' %}" alt="logo"></div>
+                <div class="container text-uppercase p-2">
+
+
+                <a class="navbar-brand font-weight-bold text-yellow" href="#">ONLINE-CAB </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle 	navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto text-uppercase">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">contact</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+                </li>
+
+
+
+                </ul>
+                </div>
+                </div>
+        </nav>
+        <section class="header-section">
+            <div class="center-div">
+                <h1 class="font-weight-bold">Its your cab Station</h1>
+                <p>we gave you the best services.We created our taxi to help you find the most dependable and highest quality taxi services, anytime and anywhere without any problems.</p>
+                <div class="header-buttons">
+                    <a href="#">Aboutus</a>
+                    <a href="#">COntact</a>
+                </div>
+            </div>
+        </section>
+        </div>
+
+    <!--***********header part end************8-->
+    <!--***********three extra heder div start************8-->
+    <section class="header-extradiv">
+        <div class="container">
+            <div class="row">
+                <div class=" extra-div col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-3x fa fa-desktop" aria-hidden="true"></i></a>
+                    <h2>EASY TO USE</h2>
+                    <p>Online cav servises provide best services in best way.there is also holidays package with best designful cars.We created our taxi to help you find the most dependable and highest quality taxi services, anytime and anywhere without any problems.</p>
+
+                </div>
+                <div class=" extra-div col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-3x fa fa-trophy" aria-hidden="true"></i></a>
+                    <h2>AWESOME SERVICES</h2>
+                    <p>Online cav servises provide best services in best way.there is also holidays package with best designful cars.We created our taxi to help you find the most dependable and highest quality taxi services, anytime and anywhere without any problems.</p>
+
+                </div>
+                <div class=" extra-div col-lg-4 col-md-4 col-12">
+                    <a href="#"><i class="fa-3x fa fa-magic" aria-hidden="true"></i></a>
+                    <h2>EASY TO CUSTOMIZE</h2>
+                    <p>Online cav servises provide best services in best way.there is also holidays package with best designful cars.We created our taxi to help you find the most dependable and highest quality taxi services, anytime and anywhere without any problems.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--***********three extra heder div end************-->
+    <!--***********offer section start************-->
+    <section class="services offer" id="service-div">
+        <div class="container headings text-center">
+            <h1 class="text-center font-weight-bold">WHAT DO WE OFFER..</h1>
+            <p class="text-center">there is also holidays package with best designful cars.</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-10 offset-lg-0">
+                    <div class="names my-3">
+                        <h1>one way services</h1>
+                        <div class="progress w-75">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width:1000%">100%</div>
+                        </div>
+                    </div>
+                    <div class="names my-3">
+                        <h1>Two way services</h1>
+                        <div class="progress w-75">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" style="width:1000%">100%</div>
+                        </div>
+                    </div>
+                    <div class="names my-3">
+                        <h1>Holidays</h1>
+                        <div class="progress w-75">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning " style="width:1000%">100%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12 servicediv"></div>
+            </div>
+
+        </div>
+
+    </section>
+    <!--***********offer section end************8-->
+
+        <footer class="background">
+            <p class="text-footer">
+                Copyright &copy; 2027 onlinecabservices.com  - All rights reserved
+            </p>
+        </footer>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+{% endblock %}
